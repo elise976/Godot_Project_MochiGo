@@ -1,0 +1,226 @@
+[gd_scene load_steps=26 format=3 uid="uid://f286he24vt7g"]
+
+[ext_resource type="Texture2D" uid="uid://sangm1r4eb5x" path="res://assets/ui/—Pngtree—pixel games fresh background_326933.png" id="1_yev5y"]
+[ext_resource type="Texture2D" uid="uid://d25cuwlihb1y3" path="res://assets/ui/Designer.png" id="2_p7vwb"]
+[ext_resource type="Texture2D" uid="uid://bwsx2f7th1d5a" path="res://assets/ui/Character.png" id="3_ktti3"]
+[ext_resource type="Texture2D" uid="uid://xlcr5osjhlw0" path="res://assets/ui/Button.png" id="4_cgfq5"]
+[ext_resource type="SpriteFrames" uid="uid://cs3hifevcusxm" path="res://fruits/cherry_frames.tres" id="4_h1mc3"]
+[ext_resource type="SpriteFrames" uid="uid://bn2nmm0l4kfv5" path="res://fruits/pineapple_frames.tres" id="5_cof4p"]
+[ext_resource type="Script" uid="uid://bfu2vokdp0vsv" path="res://GDscript/Basic_button.gd" id="5_p7vwb"]
+[ext_resource type="SpriteFrames" uid="uid://dk5tnr0mis2ji" path="res://fruits/apple_frames.tres" id="6_f7tlh"]
+[ext_resource type="Texture2D" uid="uid://bdhlv4hds2fkb" path="res://assets/ui/Basic.png" id="6_vdcm2"]
+[ext_resource type="Texture2D" uid="uid://uhd8khvjhhcg" path="res://assets/ui/Advanced.png" id="7_6rmj2"]
+[ext_resource type="Texture2D" uid="uid://bd65khguciyme" path="res://assets/Characters/Free Chicken Sprites.png" id="7_8k7j3"]
+[ext_resource type="AudioStream" uid="uid://e1s3j0qt64m3" path="res://assets/BGM/toggle-button-on.mp3" id="7_cgfq5"]
+[ext_resource type="Script" uid="uid://doiodvoabnufw" path="res://GDscript/Advanced_Button.gd" id="7_ktti3"]
+[ext_resource type="Texture2D" uid="uid://d18dw1mbvylti" path="res://assets/Characters/Basic Charakter Spritesheet.png" id="8_jkdwc"]
+[ext_resource type="AudioStream" uid="uid://hbur4lfpulkt" path="res://assets/BGM/forest_wandering.MP3" id="10_7dvkv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlppe"]
+atlas = ExtResource("7_8k7j3")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycmcx"]
+atlas = ExtResource("7_8k7j3")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kupmu"]
+atlas = ExtResource("7_8k7j3")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_catpy"]
+atlas = ExtResource("7_8k7j3")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_41akx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlppe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycmcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kupmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_catpy")
+}],
+"loop": true,
+"name": &"Chicken",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1mc3"]
+atlas = ExtResource("8_jkdwc")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cof4p"]
+atlas = ExtResource("8_jkdwc")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7tlh"]
+atlas = ExtResource("8_jkdwc")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8k7j3"]
+atlas = ExtResource("8_jkdwc")
+region = Rect2(160, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jkdwc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1mc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cof4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7tlh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8k7j3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.00170062
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = -13.0221
+offset_top = -12.9779
+offset_right = 2028.98
+offset_bottom = 1223.02
+rotation = 0.00075984
+texture = ExtResource("1_yev5y")
+expand_mode = 2
+
+[node name="MochiGo" type="Sprite2D" parent="TextureRect"]
+position = Vector2(1025.77, 719.478)
+rotation = -0.00075984
+scale = Vector2(1.50985, 1.26757)
+texture = ExtResource("2_p7vwb")
+
+[node name="Character" type="Sprite2D" parent="TextureRect"]
+position = Vector2(1015.93, 304.488)
+rotation = -0.00075984
+scale = Vector2(1.25264, 1.38893)
+texture = ExtResource("3_ktti3")
+
+[node name="cherry" type="AnimatedSprite2D" parent="TextureRect"]
+texture_filter = 1
+position = Vector2(960.88, 742.552)
+scale = Vector2(5.02448, 4.28541)
+sprite_frames = ExtResource("4_h1mc3")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="pineapple" type="AnimatedSprite2D" parent="TextureRect"]
+texture_filter = 1
+position = Vector2(1082.78, 722.338)
+scale = Vector2(5.02448, 4.28541)
+sprite_frames = ExtResource("5_cof4p")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="apple" type="AnimatedSprite2D" parent="TextureRect"]
+texture_filter = 1
+position = Vector2(1022.82, 739.486)
+scale = Vector2(3.84612, 3.40297)
+sprite_frames = ExtResource("6_f7tlh")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="chicken" type="AnimatedSprite2D" parent="TextureRect"]
+texture_filter = 1
+position = Vector2(582.242, 97.5677)
+rotation = -0.136862
+scale = Vector2(6.32728, 6.58269)
+sprite_frames = SubResource("SpriteFrames_41akx")
+animation = &"Chicken"
+autoplay = "Chicken"
+frame_progress = 0.61435
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect"]
+texture_filter = 1
+position = Vector2(1432.95, 74.1963)
+rotation = 0.306885
+scale = Vector2(6.04871, 5.89117)
+sprite_frames = SubResource("SpriteFrames_jkdwc")
+autoplay = "default"
+frame_progress = 0.40165
+
+[node name="Basic_level" type="TextureButton" parent="."]
+visibility_layer = 3
+layout_mode = 0
+offset_left = 710.215
+offset_top = -462.208
+offset_right = 3250.21
+offset_bottom = 1361.79
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource("4_cgfq5")
+stretch_mode = 0
+script = ExtResource("5_p7vwb")
+
+[node name="Basic" type="TextureRect" parent="Basic_level"]
+visibility_layer = 7
+layout_mode = 0
+offset_left = 840.57
+offset_top = 922.571
+offset_right = 1664.57
+offset_bottom = 1242.57
+scale = Vector2(0.372328, 0.313175)
+mouse_filter = 2
+texture = ExtResource("6_vdcm2")
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="Basic_level"]
+position = Vector2(-7.78222e-07, -0.000457452)
+stream = ExtResource("7_cgfq5")
+volume_db = 11.843
+
+[node name="advanced_level" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 729.0
+offset_top = -345.0
+offset_right = 3219.0
+offset_bottom = 1658.0
+mouse_filter = 1
+texture_normal = ExtResource("4_cgfq5")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("7_ktti3")
+
+[node name="Advanced" type="TextureRect" parent="advanced_level"]
+layout_mode = 0
+offset_left = 798.229
+offset_top = 1024.39
+offset_right = 1628.23
+offset_bottom = 1198.39
+scale = Vector2(0.437441, 0.616178)
+texture = ExtResource("7_6rmj2")
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="advanced_level"]
+position = Vector2(-24.2737, -160.958)
+stream = ExtResource("7_cgfq5")
+volume_db = 12.213
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_7dvkv")
+volume_db = -2.84
+autoplay = true
+
+[connection signal="pressed" from="Basic_level" to="Basic_level" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="advanced_level" to="Basic_level" method="_on_TextureButton_pressed"]

@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://bn2nmm0l4kfv5"]
+
+[ext_resource type="Texture2D" uid="uid://c2fibh1y6s5et" path="res://assets/collectable/Pineapple.png" id="1_vkicx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xf7en"]
+atlas = ExtResource("1_vkicx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xorce"]
+atlas = ExtResource("1_vkicx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c1ga"]
+atlas = ExtResource("1_vkicx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn72s"]
+atlas = ExtResource("1_vkicx")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l53c"]
+atlas = ExtResource("1_vkicx")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umjvi"]
+atlas = ExtResource("1_vkicx")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngvri"]
+atlas = ExtResource("1_vkicx")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hh0k6"]
+atlas = ExtResource("1_vkicx")
+region = Rect2(512, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xf7en")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xorce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c1ga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn72s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6l53c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umjvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngvri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hh0k6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}]

@@ -1,0 +1,120 @@
+[gd_scene load_steps=16 format=3 uid="uid://b5k426j5jxms6"]
+
+[ext_resource type="Script" uid="uid://cfmuky5kx6in6" path="res://GDscript/win_lose_final_page.gd" id="1_a7nyq"]
+[ext_resource type="Texture2D" uid="uid://sangm1r4eb5x" path="res://assets/ui/—Pngtree—pixel games fresh background_326933.png" id="1_gdhik"]
+[ext_resource type="Texture2D" uid="uid://xlcr5osjhlw0" path="res://assets/ui/Button.png" id="2_x5o3k"]
+[ext_resource type="Script" uid="uid://d3sb4fidnaibi" path="res://GDscript/back_to_menu.gd" id="3_rshmx"]
+[ext_resource type="Texture2D" uid="uid://dce00c04xdbwy" path="res://assets/ui/Back-to-menu.png" id="5_k53s1"]
+[ext_resource type="AudioStream" uid="uid://e1s3j0qt64m3" path="res://assets/BGM/toggle-button-on.mp3" id="5_wimu4"]
+[ext_resource type="AudioStream" uid="uid://bwued3wqouprd" path="res://assets/BGM/sweet parter.mp3" id="6_rshmx"]
+[ext_resource type="FontFile" uid="uid://bhki37bpbsb4q" path="res://assets/OpenType (.otf)/Kaph-Regular.otf" id="8_wimu4"]
+[ext_resource type="Texture2D" uid="uid://d18dw1mbvylti" path="res://assets/Characters/Basic Charakter Spritesheet.png" id="9_k53s1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k53s1"]
+font = ExtResource("8_wimu4")
+font_size = 80
+font_color = Color(0.999989, 0.287584, 0.541805, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t44bb"]
+atlas = ExtResource("9_k53s1")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_purrf"]
+atlas = ExtResource("9_k53s1")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4je85"]
+atlas = ExtResource("9_k53s1")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itxfk"]
+atlas = ExtResource("9_k53s1")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d8wtm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t44bb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_purrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4je85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itxfk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Panel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -7.0
+offset_top = 8.0
+offset_right = 2011.0
+offset_bottom = 1196.0
+script = ExtResource("1_a7nyq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -32.0
+offset_top = -22.0
+offset_right = 2047.0
+offset_bottom = 1223.0
+texture = ExtResource("1_gdhik")
+
+[node name="back to menu" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 265.0
+offset_top = -64.0
+offset_right = 2904.0
+offset_bottom = 1812.0
+texture_normal = ExtResource("2_x5o3k")
+stretch_mode = 4
+script = ExtResource("3_rshmx")
+
+[node name="TextureRect" type="TextureRect" parent="back to menu"]
+layout_mode = 0
+offset_left = 581.0
+offset_top = 950.0
+offset_right = 903.0
+offset_bottom = 1053.0
+texture = ExtResource("5_k53s1")
+expand_mode = 1
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="back to menu"]
+stream = ExtResource("5_wimu4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_rshmx")
+autoplay = true
+
+[node name="ResultLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.039
+anchor_top = 0.058
+anchor_right = -0.039
+anchor_bottom = 0.058
+offset_left = 533.702
+offset_top = 84.096
+offset_right = 1062.7
+offset_bottom = 216.096
+label_settings = SubResource("LabelSettings_k53s1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(996, 721)
+scale = Vector2(-16.7417, 17.9587)
+sprite_frames = SubResource("SpriteFrames_d8wtm")
+autoplay = "default"
+frame_progress = 0.378757
+
+[connection signal="pressed" from="back to menu" to="back to menu" method="_on_pressed"]
