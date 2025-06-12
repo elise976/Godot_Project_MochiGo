@@ -10,10 +10,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func _on_pressed() -> void:
+func _on_TextureButton_pressed()->void:
+	disabled = true
 	$ClickSound.play()
 	await $ClickSound.finished
-	print("click")
-	get_tree().change_scene_to_file("res://scenes/ui.tscn")
-	
+	if get_tree():
+		get_tree().change_scene_to_file("res://scenes/main.tscn")

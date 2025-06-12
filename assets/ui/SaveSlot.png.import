@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mavf8o2iknlk"
-path="res://.godot/imported/MochiGo.png-27097df49c1932a46bda9d44dea96f8b.ctex"
+uid="uid://bef63jrfrwfm2"
+path="res://.godot/imported/SaveSlot.png-a0be640657c07596bf054b8db78c1b62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/MochiGo.png"
-dest_files=["res://.godot/imported/MochiGo.png-27097df49c1932a46bda9d44dea96f8b.ctex"]
+source_file="res://assets/ui/SaveSlot.png"
+dest_files=["res://.godot/imported/SaveSlot.png-a0be640657c07596bf054b8db78c1b62.ctex"]
 
 [params]
 

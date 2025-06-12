@@ -1,8 +1,6 @@
-extends Node
+extends TextureButton
 
-var result_text: String = ""
 
-var fruit_count: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -12,6 +10,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func collect_fruit():
-	fruit_count += 1
+func _on_feed_pressed() -> void:
+	$ClickSound.play()
+	await $ClickSound.finished
+	get_tree().change_scene_to_file("res://scenes/Feed_Mochi.tscn")
+	print("feedclick")
+	
+	

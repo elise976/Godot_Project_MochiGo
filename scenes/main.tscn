@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cbyr1lptwmjd4"]
+[gd_scene load_steps=53 format=3 uid="uid://cbyr1lptwmjd4"]
 
 [ext_resource type="Script" uid="uid://b7pi34yquq31m" path="res://GDscript/main.gd" id="1_dp3eg"]
 [ext_resource type="Texture2D" uid="uid://cicpqlap5hixq" path="res://assets/collectable/Tilesets/Water.png" id="1_jkv2x"]
@@ -24,6 +24,7 @@
 [ext_resource type="FontFile" uid="uid://bbhqh8kyjrwux" path="res://assets/OpenType (.otf)/Kaph-Italic.otf" id="21_og1vs"]
 [ext_resource type="AudioStream" uid="uid://cqwl2qpmt6yic" path="res://assets/BGM/_game-die-.mp3" id="21_pm3ni"]
 [ext_resource type="AudioStream" uid="uid://db8b1te1xuhix" path="res://assets/BGM/success-1-6297.mp3" id="22_jscy8"]
+[ext_resource type="FontFile" uid="uid://2mrrsaknx1vp" path="res://assets/OpenType (.otf)/TypeLightSans-KV84p.otf" id="25_og1vs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xlg8u"]
 texture = ExtResource("2_jbj1t")
@@ -791,6 +792,11 @@ font = ExtResource("20_y6deb")
 font_size = 55
 font_color = Color(0.916741, 0.477178, 0.598413, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_og1vs"]
+font = ExtResource("25_og1vs")
+font_size = 21
+font_color = Color(0.652138, 0.5115, 0.595521, 1)
+
 [node name="main" type="Node"]
 script = ExtResource("1_dp3eg")
 
@@ -917,17 +923,17 @@ position = Vector2(1565, 506)
 anchors_preset = -1
 anchor_right = 0.017
 anchor_bottom = 0.013
-offset_left = 258.0
-offset_top = 361.0
-offset_right = 547.0
-offset_bottom = 462.4
+offset_left = 257.0
+offset_top = 328.0
+offset_right = 546.0
+offset_bottom = 429.4
 theme = SubResource("Theme_dp3eg")
 
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 1847.0
-offset_top = 1141.0
-offset_right = 1975.0
-offset_bottom = 1193.0
+offset_left = 39.0
+offset_top = 1129.0
+offset_right = 167.0
+offset_bottom = 1181.0
 texture_normal = SubResource("AtlasTexture_yc10j")
 stretch_mode = 0
 
@@ -1000,5 +1006,15 @@ volume_db = 8.883
 
 [node name="FinishSound" type="AudioStreamPlayer2D" parent="Sound"]
 stream = ExtResource("22_jscy8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FruitCountLabel" type="Label" parent="CanvasLayer"]
+offset_left = 1806.0
+offset_top = 1100.0
+offset_right = 1862.0
+offset_bottom = 1136.0
+scale = Vector2(3.12, 2.8)
+label_settings = SubResource("LabelSettings_og1vs")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_ExitButton_pressed"]

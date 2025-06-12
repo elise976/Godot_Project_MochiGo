@@ -19,4 +19,7 @@ func _loadanimation():
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		print("Picked up fruit: ", self.name)
+		GameState.collect_fruit()
 		queue_free()
+		
+		

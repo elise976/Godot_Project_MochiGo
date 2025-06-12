@@ -1,0 +1,242 @@
+[gd_scene load_steps=25 format=3 uid="uid://cn8hkucyn0hlg"]
+
+[ext_resource type="Script" uid="uid://b8dpovugyhh6m" path="res://GDscript/feed_mochi.gd" id="1_cthvh"]
+[ext_resource type="Texture2D" uid="uid://sangm1r4eb5x" path="res://assets/ui/—Pngtree—pixel games fresh background_326933.png" id="1_cvp1a"]
+[ext_resource type="Texture2D" uid="uid://d18dw1mbvylti" path="res://assets/Characters/Basic Charakter Spritesheet.png" id="3_g65ww"]
+[ext_resource type="Texture2D" uid="uid://8ieu5ybnc03" path="res://assets/ui/bar_1.png" id="3_y4ogi"]
+[ext_resource type="Texture2D" uid="uid://pakks4v6etcw" path="res://assets/ui/bar_2.png" id="4_r8oau"]
+[ext_resource type="FontFile" uid="uid://2mrrsaknx1vp" path="res://assets/OpenType (.otf)/TypeLightSans-KV84p.otf" id="4_y4ogi"]
+[ext_resource type="Texture2D" uid="uid://dnm7o12jmn67k" path="res://assets/ui/BLANK_BOTTOM_2.png" id="6_qa0im"]
+[ext_resource type="AudioStream" uid="uid://e1s3j0qt64m3" path="res://assets/BGM/toggle-button-on.mp3" id="7_j75mq"]
+[ext_resource type="Texture2D" uid="uid://br88ivo701dsk" path="res://assets/ui/l1.png" id="8_j75mq"]
+[ext_resource type="Texture2D" uid="uid://bk52e438uxgjm" path="res://assets/ui/button maker.png" id="9_u6lde"]
+[ext_resource type="AudioStream" uid="uid://deqgdy8jhu514" path="res://assets/BGM/purchase-succesful-ingame-230550.mp3" id="10_qa0im"]
+[ext_resource type="AudioStream" uid="uid://hbur4lfpulkt" path="res://assets/BGM/forest_wandering.MP3" id="12_h2q6v"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r8oau"]
+font = ExtResource("4_y4ogi")
+font_size = 80
+font_color = Color(0.324, 0.3576, 0.45, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_66wc4"]
+font = ExtResource("4_y4ogi")
+font_size = 80
+font_color = Color(0.22, 0.22, 0.22, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u6lde"]
+font = ExtResource("4_y4ogi")
+font_size = 50
+font_color = Color(0.28, 0.28, 0.28, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qa0im"]
+font = ExtResource("4_y4ogi")
+font_size = 75
+font_color = Color(0.18, 0.18, 0.18, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h2q6v"]
+font = ExtResource("4_y4ogi")
+font_size = 80
+font_color = Color(0.17, 0.17, 0.17, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa0im"]
+atlas = ExtResource("9_u6lde")
+region = Rect2(193, 111.75, 43, 32.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1mc3"]
+atlas = ExtResource("3_g65ww")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cof4p"]
+atlas = ExtResource("3_g65ww")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7tlh"]
+atlas = ExtResource("3_g65ww")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8k7j3"]
+atlas = ExtResource("3_g65ww")
+region = Rect2(160, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_26hlr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1mc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cof4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7tlh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8k7j3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3kdbo"]
+radius = 164.0
+height = 442.0
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_cthvh")
+
+[node name="FeedUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="FeedUI"]
+layout_mode = 0
+offset_right = 2024.0
+offset_bottom = 1206.0
+texture = ExtResource("1_cvp1a")
+
+[node name="FullBar" type="TextureProgressBar" parent="FeedUI"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 150.0
+offset_right = 1919.0
+offset_bottom = 1160.0
+rotation = 0.00196331
+scale = Vector2(0.281763, 0.280005)
+value = 60.0
+texture_under = ExtResource("3_y4ogi")
+texture_progress = ExtResource("4_r8oau")
+
+[node name="FruitCountLabel" type="Label" parent="FeedUI"]
+layout_mode = 0
+offset_left = 1638.0
+offset_top = 40.0
+offset_right = 1978.0
+offset_bottom = 171.0
+label_settings = SubResource("LabelSettings_r8oau")
+
+[node name="Hunger" type="Label" parent="FeedUI"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 52.0
+offset_right = 400.0
+offset_bottom = 133.0
+text = "Hunger"
+label_settings = SubResource("LabelSettings_66wc4")
+
+[node name="FeedButton" type="TextureButton" parent="FeedUI"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 358.0
+offset_right = 293.0
+offset_bottom = 427.0
+rotation = -0.00117533
+scale = Vector2(1.86752, 2.37673)
+action_mode = 0
+texture_normal = ExtResource("6_qa0im")
+ignore_texture_size = true
+
+[node name="Feedtext" type="Label" parent="FeedUI/FeedButton"]
+layout_mode = 0
+offset_left = 48.1678
+offset_top = 16.4536
+offset_right = 320.168
+offset_bottom = 97.4536
+rotation = -0.0178613
+scale = Vector2(1.0432, 0.781392)
+text = "Füttern"
+label_settings = SubResource("LabelSettings_u6lde")
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="FeedUI/FeedButton"]
+position = Vector2(-24.2737, -160.958)
+stream = ExtResource("7_j75mq")
+volume_db = 18.056
+
+[node name="Feedback" type="Control" parent="FeedUI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Heart1" type="TextureRect" parent="FeedUI/Feedback"]
+layout_mode = 0
+offset_left = 1264.0
+offset_top = 420.0
+offset_right = 1525.0
+offset_bottom = 674.0
+rotation = 0.885348
+scale = Vector2(0.621628, 0.528912)
+texture = ExtResource("8_j75mq")
+
+[node name="Heart2" type="TextureRect" parent="FeedUI/Feedback"]
+layout_mode = 0
+offset_left = 1054.0
+offset_top = 302.0
+offset_right = 1315.0
+offset_bottom = 556.0
+rotation = -0.0978791
+scale = Vector2(0.621628, 0.528912)
+texture = ExtResource("8_j75mq")
+
+[node name="NoFruit" type="Label" parent="FeedUI/Feedback"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 642.0
+offset_right = 1068.0
+offset_bottom = 797.0
+text = "Oh, 
+keine Früchte mehr /_\\"
+label_settings = SubResource("LabelSettings_qa0im")
+
+[node name="Fulltext" type="Label" parent="FeedUI/Feedback"]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 388.0
+offset_right = 978.0
+offset_bottom = 469.0
+text = "Es ist satt"
+label_settings = SubResource("LabelSettings_h2q6v")
+
+[node name="BackButton" type="TextureButton" parent="FeedUI"]
+layout_mode = 0
+offset_left = 1726.0
+offset_top = 1016.0
+offset_right = 1903.0
+offset_bottom = 1074.0
+scale = Vector2(7.50079, 5.63013)
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_qa0im")
+ignore_texture_size = true
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="FeedUI/BackButton"]
+position = Vector2(-24.2737, -160.958)
+stream = ExtResource("7_j75mq")
+volume_db = 12.213
+
+[node name="FullSound" type="AudioStreamPlayer2D" parent="FeedUI"]
+stream = ExtResource("10_qa0im")
+volume_db = 24.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Mochi" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(1053.9, 732.266)
+rotation = 0.00921193
+scale = Vector2(22.2215, 22.1199)
+sprite_frames = SubResource("SpriteFrames_26hlr")
+autoplay = "default"
+frame_progress = 0.900415
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(1062, 710)
+shape = SubResource("CapsuleShape2D_3kdbo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_h2q6v")
+volume_db = 7.828
+autoplay = true
+
+[connection signal="pressed" from="FeedUI/FeedButton" to="." method="_on_feed_button_pressed"]
+[connection signal="pressed" from="FeedUI/BackButton" to="." method="_on_back_button_pressed"]

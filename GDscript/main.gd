@@ -6,6 +6,7 @@ extends Node
 @onready var stone_positions = $StoneContainer.get_children()
 @onready var response_label = $Label/ResponseLabel  
 @onready var countdown_label = $Label/CountdownLabel
+@onready var fruit_count_label = $CanvasLayer/FruitCountLabel
 
 
 var keep_editing_on_text_submitted: bool = true
@@ -23,10 +24,12 @@ func _ready():
 	load_question()
 	answer_input.editable = true
 	answer_input.connect("text_submitted", Callable(self, "_on_answer_submitted"))
+	
+
 
 func generate_question():
-	var a = randi() % 16  # 0~15
-	var b = randi() % 16  # 0~15
+	var a = 1+randi() % 15 # 0~15
+	var b = 1+randi() % 16  # 0~15
 	var operators = ["+", "-"]
 	var op = operators[randi() % operators.size()]
 
@@ -46,6 +49,8 @@ func generate_question():
 		correct_answer = a - b
 
 	current_question = str(a) + " " + op + " " + str(b)
+	
+
 
 func load_question():
 	answer_input.text = ""
@@ -74,16 +79,6 @@ func _on_answer_submitted(text):
 			answer_input.call_deferred("edit")
 
 func next_question():
-	#question_count += 1
-	#if question_count <= stone_positions.size()-1:
-		#load_question()
-	#else:
-		##question_label.text = "Finished!"
-		##response_label.text = "Game Over! 🎉"
-		#answer_input.editable = false
-		#$Sound/FinishSound.play()
-		#await $Sound/FinishSound.finished
-		#go_to_final_page("Congrats! You won🎉")
 	load_question()
 
 func move_character(direction):
@@ -94,21 +89,23 @@ func move_character(direction):
 	if current_stone == stone_positions.size() - 1:
 		$Sound/FinishSound.play()
 		await $Sound/FinishSound.finished
-		go_to_final_page("Congrats! You won🎉")
+		go_to_final_page("Glückwunsch!Gewonnen!🎉")
 
 func _on_time_up():
 	question_label.text = "Time's up!"
 	answer_input.editable = false
-	go_to_final_page("Too bad. Try again🥲")
+	go_to_final_page("Du kannst es besser!^_^")
 
 func _process(delta: float):
+	fruit_count_label.text = "🍎 %d" % GameState.fruit_count
 	if is_counting:
 		countdown_time -= delta
 		if countdown_time <= 0:
 			countdown_time = 0
 			is_counting = false
 			_on_time_up()
-		countdown_label.text = " " + str(round(countdown_time))
+		countdown_label.text = "⏱ " + str(round(countdown_time)) + "s"
+
 
 func _on_ExitButton_pressed() -> void:
 	$Sound/ClickSound.play()
@@ -118,3 +115,6 @@ func _on_ExitButton_pressed() -> void:
 func go_to_final_page(result_text: String):
 	GameState.result_text = result_text
 	get_tree().change_scene_to_file("res://scenes/WinLose_Final_Page.tscn")
+
+
+	
