@@ -259,10 +259,10 @@ volume_db = 12.213
 
 [node name="Schwere" type="Label" parent="advanced_level"]
 layout_mode = 0
-offset_left = 100.26
-offset_top = 50.3002
-offset_right = 388.26
-offset_bottom = 144.3
+offset_left = 92.2562
+offset_top = 48.1415
+offset_right = 380.256
+offset_bottom = 145.142
 scale = Vector2(1, 0.782583)
 text = "Schwer"
 label_settings = SubResource("LabelSettings_f7tlh")

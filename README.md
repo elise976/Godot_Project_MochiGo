@@ -1,11 +1,18 @@
-# 🏝️ ***MochiGo!***
+# 🏝️ ***MochiGo! --- a game to practice arithmetic ability for German primary school students***
 
 **A 2D educational game built with Godot. The player helps *Mochi* trapped on an island cross a river by solving arithmetic questions. Each correct answer lets the player jump forward on stones; a wrong answer sends them back. Reach the shore before time runs out!**
 
 ---
 
 ## 🖼️ Gameplay Preview
-![game preview](assets/screenshot.gif)
+
+### target group: German primary school student (Klasse 1 - Klasse 4)
+### screenshots:
+![game preview](assets/screenshot1.gif)
+![screen shot](assets/screenshot2.gif)
+![screen shot](assets/screenshot3.gif)
+![screen shot](assets/screenshot4.gif)
+![screen shot](assets/screenshot5.gif)
 ---
 
 ## 🎮 Features

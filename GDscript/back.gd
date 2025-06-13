@@ -16,5 +16,6 @@ func _on_back_pressed() -> void:
 	$ClickSound.play()
 	await $ClickSound.finished
 	print("backclick")
-	get_tree().change_scene_to_file("res://scenes/ui.tscn")
+	if get_tree():
+		get_tree().change_scene_to_file("res://scenes/ui.tscn")
 	

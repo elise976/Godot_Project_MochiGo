@@ -5,4 +5,5 @@ func _on_TextureButton_pressed3() -> void:
 	$ClickSound.play()
 	await $ClickSound.finished
 
-	get_tree().change_scene_to_file("res://scenes/Feed_Mochi.tscn")
+	if get_tree():
+		get_tree().change_scene_to_file("res://scenes/Feed_Mochi.tscn")

@@ -82,5 +82,6 @@ func full_text_show() -> void:
 func _on_back_button_pressed() -> void:
 	$FeedUI/BackButton/ClickSound.play()
 	await $FeedUI/BackButton/ClickSound.finished
-	get_tree().change_scene_to_file("res://scenes/ui.tscn")
+	if get_tree():
+		get_tree().change_scene_to_file("res://scenes/ui.tscn")
 	
