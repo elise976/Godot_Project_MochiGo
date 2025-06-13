@@ -8,10 +8,10 @@
 [ext_resource type="FontFile" uid="uid://2mrrsaknx1vp" path="res://assets/OpenType (.otf)/TypeLightSans-KV84p.otf" id="4_y4ogi"]
 [ext_resource type="Texture2D" uid="uid://dnm7o12jmn67k" path="res://assets/ui/BLANK_BOTTOM_2.png" id="6_qa0im"]
 [ext_resource type="AudioStream" uid="uid://e1s3j0qt64m3" path="res://assets/BGM/toggle-button-on.mp3" id="7_j75mq"]
+[ext_resource type="AudioStream" uid="uid://cqwl2qpmt6yic" path="res://assets/BGM/_game-die-.mp3" id="8_h2q6v"]
 [ext_resource type="Texture2D" uid="uid://br88ivo701dsk" path="res://assets/ui/l1.png" id="8_j75mq"]
 [ext_resource type="Texture2D" uid="uid://bk52e438uxgjm" path="res://assets/ui/button maker.png" id="9_u6lde"]
 [ext_resource type="AudioStream" uid="uid://deqgdy8jhu514" path="res://assets/BGM/purchase-succesful-ingame-230550.mp3" id="10_qa0im"]
-[ext_resource type="AudioStream" uid="uid://hbur4lfpulkt" path="res://assets/BGM/forest_wandering.MP3" id="12_h2q6v"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r8oau"]
 font = ExtResource("4_y4ogi")
@@ -105,7 +105,6 @@ offset_right = 1919.0
 offset_bottom = 1160.0
 rotation = 0.00196331
 scale = Vector2(0.281763, 0.280005)
-value = 60.0
 texture_under = ExtResource("3_y4ogi")
 texture_progress = ExtResource("4_r8oau")
 
@@ -153,6 +152,10 @@ label_settings = SubResource("LabelSettings_u6lde")
 position = Vector2(-24.2737, -160.958)
 stream = ExtResource("7_j75mq")
 volume_db = 18.056
+
+[node name="WrongSound" type="AudioStreamPlayer2D" parent="FeedUI/FeedButton"]
+stream = ExtResource("8_h2q6v")
+volume_db = 4.674
 
 [node name="Feedback" type="Control" parent="FeedUI"]
 anchors_preset = 0
@@ -232,11 +235,6 @@ frame_progress = 0.900415
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(1062, 710)
 shape = SubResource("CapsuleShape2D_3kdbo")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_h2q6v")
-volume_db = 7.828
-autoplay = true
 
 [connection signal="pressed" from="FeedUI/FeedButton" to="." method="_on_feed_button_pressed"]
 [connection signal="pressed" from="FeedUI/BackButton" to="." method="_on_back_button_pressed"]

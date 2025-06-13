@@ -24,7 +24,7 @@ func _ready():
 	load_question()
 	answer_input.editable = true
 	answer_input.connect("text_submitted", Callable(self, "_on_answer_submitted"))
-	
+	BgmPlayer.stop_music()
 
 
 func generate_question():

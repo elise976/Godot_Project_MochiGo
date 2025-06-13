@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="crosstheriver"
-run/main_scene="uid://b5k426j5jxms6"
+run/main_scene="uid://f286he24vt7g"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameState="*res://GDscript/GameState.gd"
+BgmPlayer="*res://scenes/BgmPlayer.tscn"
 
 [display]
 

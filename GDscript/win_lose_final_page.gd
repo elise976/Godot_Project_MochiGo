@@ -5,3 +5,4 @@ extends Control
 
 func _ready():
 	result_label.text = GameState.result_text
+	BgmPlayer.stop_music()

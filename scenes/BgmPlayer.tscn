@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cho3bw50m7ua2"]
+
+[ext_resource type="AudioStream" uid="uid://hbur4lfpulkt" path="res://assets/BGM/forest_wandering.MP3" id="1_nfnut"]
+[ext_resource type="Script" uid="uid://dehw41atjevbt" path="res://GDscript/BgmPlayer.gd" id="2_fa0a6"]
+
+[node name="BgmPlayer" type="Node2D"]
+script = ExtResource("2_fa0a6")
+
+[node name="Bgmplayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_nfnut")
+volume_db = 7.828
+autoplay = true

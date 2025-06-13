@@ -1,6 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://f286he24vt7g"]
+[gd_scene load_steps=30 format=3 uid="uid://f286he24vt7g"]
 
-[ext_resource type="Script" uid="uid://br2pkuky673lq" path="res://GDscript/ui.gd" id="1_cof4p"]
+[ext_resource type="Script" uid="uid://llqyc6udoctc" path="res://scenes/ui.gd" id="1_h1mc3"]
 [ext_resource type="Texture2D" uid="uid://sangm1r4eb5x" path="res://assets/ui/—Pngtree—pixel games fresh background_326933.png" id="1_yev5y"]
 [ext_resource type="Texture2D" uid="uid://d25cuwlihb1y3" path="res://assets/ui/Designer.png" id="2_p7vwb"]
 [ext_resource type="Texture2D" uid="uid://bwsx2f7th1d5a" path="res://assets/ui/Character.png" id="3_ktti3"]
@@ -12,7 +12,6 @@
 [ext_resource type="AudioStream" uid="uid://e1s3j0qt64m3" path="res://assets/BGM/toggle-button-on.mp3" id="7_cgfq5"]
 [ext_resource type="Texture2D" uid="uid://d18dw1mbvylti" path="res://assets/Characters/Basic Charakter Spritesheet.png" id="8_jkdwc"]
 [ext_resource type="Texture2D" uid="uid://dnm7o12jmn67k" path="res://assets/ui/BLANK_BOTTOM_2.png" id="9_qsv74"]
-[ext_resource type="AudioStream" uid="uid://hbur4lfpulkt" path="res://assets/BGM/forest_wandering.MP3" id="10_7dvkv"]
 [ext_resource type="Script" uid="uid://clwx15td1hr7y" path="res://GDscript/basic_level.gd" id="10_h1mc3"]
 [ext_resource type="FontFile" uid="uid://2mrrsaknx1vp" path="res://assets/OpenType (.otf)/TypeLightSans-KV84p.otf" id="11_qsv74"]
 [ext_resource type="Script" uid="uid://bjkrhs4rkewig" path="res://GDscript/advanced_level.gd" id="15_cof4p"]
@@ -115,7 +114,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 0.00170062
-script = ExtResource("1_cof4p")
+script = ExtResource("1_h1mc3")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
@@ -266,10 +265,6 @@ offset_bottom = 144.3
 scale = Vector2(1, 0.782583)
 text = "Schwer"
 label_settings = SubResource("LabelSettings_f7tlh")
-
-[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_7dvkv")
-volume_db = 6.106
 
 [connection signal="pressed" from="Basic_level" to="Basic_level" method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Feed_Mochi" to="Feed_Mochi" method="_on_TextureButton_pressed3"]
