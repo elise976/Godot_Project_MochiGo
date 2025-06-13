@@ -1,7 +1,7 @@
 extends Node
 
 var result_text: String = ""
-
+var level: String = "basic"
 var fruit_count: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

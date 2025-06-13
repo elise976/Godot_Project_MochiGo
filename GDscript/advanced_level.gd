@@ -6,12 +6,14 @@ func _process(delta: float) -> void:
 
 
 func _on_TextureButton_pressed() -> void:
+	GameState.level = "advanced"
 	disabled = true
 	$ClickSound.play()
 	await $ClickSound.finished
 
 	
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	if get_tree():
+		get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 
 func _on_pressed() -> void:

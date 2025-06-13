@@ -11,6 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_TextureButton_pressed()->void:
+	GameState.level = "basic"
 	disabled = true
 	$ClickSound.play()
 	await $ClickSound.finished

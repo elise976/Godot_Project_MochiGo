@@ -21,8 +21,8 @@ func _ready() -> void:
 	heart2.visible = false
 	no_fruit_text.visible = false
 	fulltext.visible = false
-	BgmPlayer.play_music()  # 确保 BgmPlayer 是 Autoload
-
+	BgmPlayer.play_music()  
+	
 func _process(delta: float) -> void:
 	fruit_count_label.text = "Fruits: %d" % GameState.fruit_count
 
@@ -84,4 +84,5 @@ func full_text_show() -> void:
 func _on_back_button_pressed() -> void:
 	$FeedUI/BackButton/ClickSound.play()
 	await $FeedUI/BackButton/ClickSound.finished
+
 	get_tree().change_scene_to_file("res://scenes/ui.tscn")
