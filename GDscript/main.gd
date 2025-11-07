@@ -171,6 +171,7 @@ func _on_ExitButton_pressed() -> void:
 	
 func go_to_final_page(result_text: String):
 	GameState.result_text = result_text
+
 	get_tree().change_scene_to_file("res://scenes/WinLose_Final_Page.tscn")
 
 

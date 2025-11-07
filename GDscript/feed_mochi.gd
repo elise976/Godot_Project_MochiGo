@@ -11,11 +11,11 @@ extends Node2D
 @onready var wrongsound = $FeedUI/FeedButton/WrongSound
 @onready var fullsound = $FeedUI/FullSound
 
-var sat_value :=90
+var sat_value :=50
 var max_sat := 100
 var sat_decrease_rate := 10
 
-var sat_full_timer := 0.0  # 新增：吃饱后计时
+var sat_full_timer := 0.0  
 
 func _ready() -> void:
 	update_ui()
